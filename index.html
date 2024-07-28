@@ -9,37 +9,39 @@
 </head>
 
 <body>
+   <div class="container">
     <div class="quiz-selection">
         <div class="quiz">
-            <h1>quiz question </h1>
+            <h1 id="question"></h1>
             <hr>
             <ul>
                 <li>
-                    <input type="radio" name="answer" id="a">
-                    <label for="a" id="option-1">quiz option</label>
+                    <input type="radio" name="ans" id="a" class="answer">
+                    <label for="a" id="option-1"></label>
                 </li>
                 <li>
-                    <input type="radio" name="answer" id="a">
-                    <label for="a" id="option-1">quiz option</label>
+                    <input type="radio" name="ans" id="a"class="answer">
+                    <label for="a" id="option-2"></label>
                 </li>
                 <li>
-                    <input type="radio" name="answer" id="a">
-                    <label for="a" id="option-1">quiz option</label>
+                    <input type="radio" name="ans" id="a"class="answer">
+                    <label for="a" id="option-3"></label>
                 </li>
                 <li>
-                    <input type="radio" name="answer" id="a">
-                    <label for="a" id="option-1">quiz option</label>
+                    <input type="radio" name="ans" id="a" class="answer">
+                    <label for="a" id="option-4"></label>
                 </li>
                
 
             </ul>
             <hr>
 
-        <div>
-            <button type="submit">Submit</button>
+        
         </div>
-        </div>
-
+    </div>
+    <div class="btn">
+        <button type="submit" class="" onclick="nextQues()">Next</button>
+    </div>
     </div>
 
 

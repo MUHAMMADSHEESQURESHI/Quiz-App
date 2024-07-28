@@ -4,15 +4,54 @@ body{
     background-color: #acc5fd;
     color: #fff;
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 50%;
+    background-color: #ffffff;
+
+    margin-top:20px ;
+    height: 540px;
+
+
 }
 .quiz-selection{
-    background-color: #ffffff;
     color: #000000;
-    width: 50%;
-    height: 235px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
+   
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
     
 }
 ul{
 list-style: none;
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+}
+li{
+    border: 1px solid #e3e3e3;
+margin-top:20px ;    
+padding: 10px;
+    width: 40%;
+    border-radius: 16px;
+}
+h1{
+    padding: 1rem;
+    margin: 1rem;
+}
+button{
+    background-color: #5b79c0;
+    border: none;
+    color: #ffffff;
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    text-align: center;
+}
+.btn{
+    padding-left:45px ;
+
 }
