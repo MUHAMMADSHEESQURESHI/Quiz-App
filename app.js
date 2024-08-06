@@ -52,10 +52,10 @@ let quizobj = [
   ];
     let count = 0
     let h1el = document.querySelectorAll("#question")[0]
-    let optA = document.querySelectorAll("#option-1")[0]
-    let optB = document.querySelectorAll("#option-2")[0]
-    let optC = document.querySelectorAll("#option-3")[0]
-    let optD = document.querySelectorAll("#option-4")[0]
+    let optA = document.querySelectorAll("#option1")[0]
+    let optB = document.querySelectorAll("#option2")[0]
+    let optC = document.querySelectorAll("#option3")[0]
+    let optD = document.querySelectorAll("#option4")[0]
     let btnEl = document.querySelectorAll("button")[0]
     
 
@@ -76,33 +76,41 @@ function loadQuiz (){
 function nextQues (){
     count = count + 1
     loadQuiz()
-    checkAns()
-
+    getSelectedLabel(containerId)
+    checkAns ()
     if(count === 3){
       btnEl.innerText = "Submit"   
     }
    
 
 }
-function checkAns (){
-    let correctAns = 0
-quizobj.forEach(()=>{
-    const selectedRadio = document.querySelector('input[name="ans"]:checked');
-    console.log(selectedRadio)
-if(selectedRadio && selectedRadio.value === quizobj[count].correctAnswer ){
- return  correctAns++
+
+function getSelectedLabel (containerId){
+
+  const container = document.querySelectorAll(containerId)[0]
+  console.log(container)
+  const radios = container.querySelectorAll('input[type="radio"]');
+  console.log(radios)
+for(let radio of radios ){
+  if(radio.checked){
+    const label = radio.nextElementSibling
+    return label ? label.textContent :null
+  }
+
+}
+return null
 }
 
-})
-}  
+const containerId = '#quizEl';
+const selectedLabel = getSelectedLabel(containerId);
+console.log(`Selected radio label: ${selectedLabel}`);
 
+function checkAns (){
+const labeltext =  document.querySelectorAll("#"+selectedLabel)[0].innerHTML
+console.log(labeltext)
+
+}
 checkAns()
-
-
-
-
-
-
 
 
 
