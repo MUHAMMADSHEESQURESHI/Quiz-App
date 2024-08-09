@@ -79,6 +79,8 @@ function nextQues() {
  count = count +1
   loadQuiz();
   checkAnswer()
+  calcScore()
+
   if(count === 4){
     btnEl.innerHTML = "Submit"
   }
@@ -105,16 +107,17 @@ function getSelectedLabel() {
   return selectedLabel;
 }
 loadQuiz()
-
+let score = 0
+let correctAns = false
 function checkAnswer (){
-  let score = 0
   if(inputAns === quizobj[flagNum].correctAnswer){
- score = score + 10
  console.log("correct ans")
+ return correctAns = true
 
   }
   else{
     console.log("wrong ans")
+    return correctAns = false
 
   }
 
@@ -122,4 +125,24 @@ function checkAnswer (){
  
 }
 
+function calcScore (){
+  console.log(correctAns)
+    if(correctAns ){
+    score = score + 10
+  }
+  console.log("your score is " + score)
 
+}
+let quizEl = document.querySelectorAll("quiz-selection")[0]
+let hiddEl = document.querySelectorAll("quiz")[0]
+function resultScreen(){
+  
+  hiddEl.innerHTML = `<h1>Tour score is ${score}</h1>
+`
+}
+
+
+if(btnEl.innerHTML === "Submit" ){
+  resultScreen()
+  
+  }
