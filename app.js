@@ -133,16 +133,26 @@ function calcScore (){
   console.log("your score is " + score)
 
 }
-let quizEl = document.querySelectorAll("quiz-selection")[0]
-let hiddEl = document.querySelectorAll("quiz")[0]
+let hiddEl = document.querySelectorAll(".quiz-selection")[0]
+// let hiddEl = document.querySelectorAll(".quiz")[0]
+console.log(hiddEl)
 function resultScreen(){
+  let calculate = (score / 50)*100
   
-  hiddEl.innerHTML = `<h1>Tour score is ${score}</h1>
-`
+  hiddEl.innerHTML = `<h1>Your score is ${calculate}%</h1>`
+}
+function question (){
+  if(btnEl.innerHTML === "Submit" ){
+    resultScreen()
+    
+    }
+    else{
+
+      nextQues()
+    }
+
+
+
+
 }
 
-
-if(btnEl.innerHTML === "Submit" ){
-  resultScreen()
-  
-  }
